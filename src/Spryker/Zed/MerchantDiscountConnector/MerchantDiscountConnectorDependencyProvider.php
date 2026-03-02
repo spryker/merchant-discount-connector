@@ -27,11 +27,6 @@ class MerchantDiscountConnectorDependencyProvider extends AbstractBundleDependen
      */
     public const FACADE_MERCHANT = 'FACADE_MERCHANT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -41,11 +36,6 @@ class MerchantDiscountConnectorDependencyProvider extends AbstractBundleDependen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDiscountFacade(Container $container): Container
     {
         $container->set(static::FACADE_DISCOUNT, function (Container $container) {
@@ -55,11 +45,6 @@ class MerchantDiscountConnectorDependencyProvider extends AbstractBundleDependen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT, function (Container $container) {

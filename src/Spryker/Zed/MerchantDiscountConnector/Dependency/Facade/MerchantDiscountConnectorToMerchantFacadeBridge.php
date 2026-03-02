@@ -25,11 +25,6 @@ class MerchantDiscountConnectorToMerchantFacadeBridge implements MerchantDiscoun
         $this->merchantFacade = $merchantFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCriteriaTransfer $merchantCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCollectionTransfer
-     */
     public function get(MerchantCriteriaTransfer $merchantCriteriaTransfer): MerchantCollectionTransfer
     {
         return $this->merchantFacade->get($merchantCriteriaTransfer);

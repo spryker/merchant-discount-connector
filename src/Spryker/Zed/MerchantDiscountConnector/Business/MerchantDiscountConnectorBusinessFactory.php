@@ -23,41 +23,26 @@ use Spryker\Zed\MerchantDiscountConnector\MerchantDiscountConnectorDependencyPro
  */
 class MerchantDiscountConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantDiscountConnector\Business\Checker\MerchantReferenceDecisionRuleCheckerInterface
-     */
     public function createMerchantReferenceDecisionRuleChecker(): MerchantReferenceDecisionRuleCheckerInterface
     {
         return new MerchantReferenceDecisionRuleChecker($this->getDiscountFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantDiscountConnector\Business\Collector\DiscountableItemCollectorInterface
-     */
     public function createDiscountableItemCollector(): DiscountableItemCollectorInterface
     {
         return new DiscountableItemCollector($this->createMerchantReferenceDecisionRuleChecker());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantDiscountConnector\Business\Reader\MerchantReaderInterface
-     */
     public function createMerchantReader(): MerchantReaderInterface
     {
         return new MerchantReader($this->getMerchantFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantDiscountConnector\Dependency\Facade\MerchantDiscountConnectorToDiscountFacadeInterface
-     */
     public function getDiscountFacade(): MerchantDiscountConnectorToDiscountFacadeInterface
     {
         return $this->getProvidedDependency(MerchantDiscountConnectorDependencyProvider::FACADE_DISCOUNT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantDiscountConnector\Dependency\Facade\MerchantDiscountConnectorToMerchantFacadeInterface
-     */
     public function getMerchantFacade(): MerchantDiscountConnectorToMerchantFacadeInterface
     {
         return $this->getProvidedDependency(MerchantDiscountConnectorDependencyProvider::FACADE_MERCHANT);

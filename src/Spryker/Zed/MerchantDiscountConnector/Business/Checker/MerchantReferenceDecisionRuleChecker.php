@@ -19,21 +19,11 @@ class MerchantReferenceDecisionRuleChecker implements MerchantReferenceDecisionR
      */
     protected MerchantDiscountConnectorToDiscountFacadeInterface $discountFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantDiscountConnector\Dependency\Facade\MerchantDiscountConnectorToDiscountFacadeInterface $discountFacade
-     */
     public function __construct(MerchantDiscountConnectorToDiscountFacadeInterface $discountFacade)
     {
         $this->discountFacade = $discountFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isMerchantReferenceSatisfiedBy(QuoteTransfer $quoteTransfer, ItemTransfer $itemTransfer, ClauseTransfer $clauseTransfer): bool
     {
         if ($itemTransfer->getMerchantReference() === null) {

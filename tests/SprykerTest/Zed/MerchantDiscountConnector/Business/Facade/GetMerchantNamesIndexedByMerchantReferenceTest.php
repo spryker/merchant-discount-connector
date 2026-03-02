@@ -39,9 +39,6 @@ class GetMerchantNamesIndexedByMerchantReferenceTest extends Unit
      */
     protected MerchantDiscountConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldReturnAllMerchantNamesIndexedByMerchantReference(): void
     {
         // Arrange

@@ -27,9 +27,6 @@ class DiscountableItemCollector implements DiscountableItemCollectorInterface
      */
     protected MerchantReferenceDecisionRuleCheckerInterface $merchantReferenceDecisionRuleChecker;
 
-    /**
-     * @param \Spryker\Zed\MerchantDiscountConnector\Business\Checker\MerchantReferenceDecisionRuleCheckerInterface $merchantReferenceDecisionRuleChecker
-     */
     public function __construct(MerchantReferenceDecisionRuleCheckerInterface $merchantReferenceDecisionRuleChecker)
     {
         $this->merchantReferenceDecisionRuleChecker = $merchantReferenceDecisionRuleChecker;
@@ -53,12 +50,6 @@ class DiscountableItemCollector implements DiscountableItemCollectorInterface
         return $discountableItems;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $priceMode
-     *
-     * @return \Generated\Shared\Transfer\DiscountableItemTransfer
-     */
     protected function createDiscountableItemTransfer(ItemTransfer $itemTransfer, string $priceMode): DiscountableItemTransfer
     {
         return (new DiscountableItemTransfer())
@@ -68,12 +59,6 @@ class DiscountableItemCollector implements DiscountableItemCollectorInterface
             ->setOriginalItem($itemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $priceMode
-     *
-     * @return int
-     */
     protected function getUnitPrice(ItemTransfer $itemTransfer, string $priceMode): int
     {
         if ($priceMode === static::PRICE_MODE_NET) {

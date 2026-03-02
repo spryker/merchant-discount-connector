@@ -17,9 +17,6 @@ class MerchantReader implements MerchantReaderInterface
      */
     protected MerchantDiscountConnectorToMerchantFacadeInterface $merchantFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantDiscountConnector\Dependency\Facade\MerchantDiscountConnectorToMerchantFacadeInterface $merchantFacade
-     */
     public function __construct(MerchantDiscountConnectorToMerchantFacadeInterface $merchantFacade)
     {
         $this->merchantFacade = $merchantFacade;

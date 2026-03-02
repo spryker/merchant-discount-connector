@@ -38,12 +38,6 @@ class MerchantDiscountConnectorBusinessTester extends Actor
      */
     protected const TYPE_LIST = 'list';
 
-    /**
-     * @param string $operator
-     * @param string $merchantReference
-     *
-     * @return \Generated\Shared\Transfer\ClauseTransfer
-     */
     public function createClauseTransfer(string $operator, string $merchantReference): ClauseTransfer
     {
         return (new ClauseTransfer())
